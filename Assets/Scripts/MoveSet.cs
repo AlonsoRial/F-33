@@ -7,15 +7,12 @@ public class MoveSet : MonoBehaviour
 
     [Header("Rotación")]
     public float velocidadRotacion;
-    public float maxAngleRotation = 15f;
+    public float velocidadSpeed;
 
-    [Header("Movimiento")]
-    public float velocidadSpeedVertical;
-    public float velocidadSpeedHorizontal;
+    public float _hInput;
+    public float _vInput;
+    
 
-    [Header("Input")]
-    public float horizontalInput;
-    public float verticalInput;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +23,20 @@ public class MoveSet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        _hInput = Input.GetAxis("Horizontal") * velocidadRotacion;
 
+
+        //_vInput = Input.GetAxis("Vertical") * velocidadSpeed;
+        _vInput = Input.GetAxis("Fire1")* velocidadSpeed;
+        
+
+
+        this.transform.Rotate(Vector3.up * _hInput* Time.deltaTime);
+
+        
+
+        this.transform.Translate(Vector3.forward * _vInput * Time.deltaTime);
 
     }
 }
