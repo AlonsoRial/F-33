@@ -40,7 +40,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "ps4Contro",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -62,7 +62,7 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "ps4Contro",
+                    "groups": "",
                     "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -94,11 +94,11 @@
     ],
     "controlSchemes": [
         {
-            "name": "ps4Contro",
-            "bindingGroup": "ps4Contro",
+            "name": "ControlesMando",
+            "bindingGroup": "ControlesMando",
             "devices": [
                 {
-                    "devicePath": "<DualShock4GampadiOS>",
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

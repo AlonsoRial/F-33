@@ -935,23 +935,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4465035140963908, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
   m_PrefabInstance: {fileID: 97485056}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1302904914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302904904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2973101943581d449a9a1fdbb3449015, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerInput: {fileID: 1302904918}
-  speedRotation: 30
-  speedRun: 30
-  rotarSwitch: 0
---- !u!114 &1302904918
+--- !u!114 &1302904921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -981,6 +965,22 @@ MonoBehaviour:
   m_DefaultActionMap: Drive
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1302904922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302904904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2973101943581d449a9a1fdbb3449015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInput: {fileID: 1302904921}
+  speedRotation: 30
+  speedRun: 30
+  rotarSwitch: 0
 --- !u!1001 &1359194983
 PrefabInstance:
   m_ObjectHideFlags: 0
