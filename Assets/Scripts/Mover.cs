@@ -12,6 +12,9 @@ public class Mover : MonoBehaviour
 
     private CharacterController controller;
 
+    [SerializeField]
+    private float gravityValue = -9.81f;
+
     private Vector3 moveDirection = Vector3.zero;
     private Vector2 inputVector = Vector2.zero;
 
@@ -36,6 +39,15 @@ public class Mover : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= MoveSpeed;
 
+       
+    }
+
+
+    private void FixedUpdate()
+    {
+        moveDirection.y += gravityValue * Time.deltaTime;
+
         controller.Move(moveDirection * Time.deltaTime);
     }
+
 }

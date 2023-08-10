@@ -818,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 3
   playerIndex: 0
+  gravityValue: -10
 --- !u!114 &1549664128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,10 +893,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.4956999
-  m_Radius: 0
+  m_Height: 1
+  m_Radius: 6
   m_SlopeLimit: 45
-  m_StepOffset: 0
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -912,6 +913,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844768189302903238, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844768189302903238, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3844768189302903257, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
@@ -924,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844768189302903257, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.87
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3844768189302903257, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -958,10 +963,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 3844768189302903233, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
 --- !u!4 &35798187884837884
 Transform:

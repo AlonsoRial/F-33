@@ -48,9 +48,31 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "up",
+                    "id": "ce99d54b-9687-4f50-8372-deb1ed44fa52",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "down",
                     "id": "2dbc9e2e-17df-4521-8115-8dee767633ff",
                     "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "bc88761f-1fa5-4aa0-b4a9-3c43e004c8a2",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,6 +92,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "left",
+                    "id": "5b5a0c8d-73ff-48e1-af74-09c2398e335f",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "right",
                     "id": "3ff589f3-e501-4efa-aa7f-56d85906c401",
                     "path": "<Keyboard>/rightArrow",
@@ -81,12 +114,23 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "6b5a8d08-838d-4be1-b055-20acaf4546e2",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/x",
+                    "name": "right",
+                    "id": "9717f85e-e462-48ec-8e6c-f07a655c7912",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "92c79cfc-7c3a-4456-8397-1cfd4ef259ff",
+                    "path": "<Joystick>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
                     "action": "Joystick",
                     "isComposite": false,
                     "isPartOfComposite": false
