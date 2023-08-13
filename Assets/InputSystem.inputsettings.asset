@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: InputSystem.inputsettings
   m_EditorClassIdentifier: 
   m_SupportedDevices:
-  - HID::Nintendo Wireless Gamepad
-  - Gamepad
   - Keyboard
+  - HID::Nintendo Wireless Gamepad
   m_UpdateMode: 1
   m_MaxEventBytesPerUpdate: 5242880
   m_MaxQueuedEventsPerUpdate: 1000
