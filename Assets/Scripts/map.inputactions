@@ -1,0 +1,108 @@
+{
+    "name": "map",
+    "maps": [
+        {
+            "name": "Drive",
+            "id": "71886518-9f99-4e5b-9b54-246300660c21",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "daf36d2f-5785-477a-b4f1-7a74a574fbf7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "b6a4e576-5098-4ce9-9e48-a918e1d88340",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NoRun",
+                    "type": "Button",
+                    "id": "d3fe2fdf-5578-42f2-aee4-2b6162b1991e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e8f7885c-a637-4c43-b95f-14f8c2313df3",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ps4Contro",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42449210-a52b-4ece-9ac5-630d8216cb5d",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51341c7d-b11f-4d82-aedc-1d486944de09",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ps4Contro",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "594a1828-f1c6-466c-b03d-ca970eb05332",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f200b83-3f65-4856-b425-3bb8a8513dc2",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NoRun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "ps4Contro",
+            "bindingGroup": "ps4Contro",
+            "devices": [
+                {
+                    "devicePath": "<DualShock4GampadiOS>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

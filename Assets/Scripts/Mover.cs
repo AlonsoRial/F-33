@@ -5,6 +5,9 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField]
+    private float rotationSpeed = 5f;
+
+    [SerializeField]
     private float MoveSpeed = 3f;
 
     [SerializeField]
@@ -16,7 +19,10 @@ public class Mover : MonoBehaviour
     private float gravityValue = -9.81f;
 
     private Vector3 moveDirection = Vector3.zero;
+    private Vector3 moveRun = Vector3.zero;
     private Vector2 inputVector = Vector2.zero;
+
+    bool corriendo;
 
     private void Awake()
     {
@@ -33,21 +39,32 @@ public class Mover : MonoBehaviour
         inputVector = direction;
     }
 
+    public void SetInputRun(bool IsRunnin)
+    {
+        
+    }
+
+
     void Update()
     {
-        moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
-        moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= MoveSpeed;
+
+        float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up, rotationAmount);
 
        
+
+
+
+
     }
 
 
     private void FixedUpdate()
     {
         moveDirection.y += gravityValue * Time.deltaTime;
-
         controller.Move(moveDirection * Time.deltaTime);
+
+        
     }
 
 }

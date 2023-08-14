@@ -23,4 +23,9 @@ public class PlayerInputHandler : MonoBehaviour
             mover.SetInputVector(context.ReadValue<Vector2>());
     }
 
+    public void OnRun(CallbackContext context)
+    {
+        mover.SetInputRun(context.ReadValueAsButton());
+    }
+
 }

@@ -11,7 +11,17 @@
                     "id": "822c120e-aa06-476b-8b24-3f46fb2e2cc6",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RUN",
+                    "type": "Button",
+                    "id": "a3bbd5e8-7319-426d-a096-bb0d8e440557",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -122,6 +132,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2438ac5d-a955-4fbd-983c-fb7b122e20b5",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RUN",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

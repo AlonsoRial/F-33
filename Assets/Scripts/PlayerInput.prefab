@@ -75,6 +75,23 @@ MonoBehaviour:
     m_ActionId: 822c120e-aa06-476b-8b24-3f46fb2e2cc6
     m_ActionName: PlayerMovement/Movement[/Keyboard/rightArrow,/Keyboard/leftArrow,/Keyboard/downArrow,/Keyboard/upArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Nintendo
       Wireless Gamepad/hat,/Nintendo Wireless Gamepad1/hat]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4042111337426084070}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a3bbd5e8-7319-426d-a096-bb0d8e440557
+    m_ActionName: PlayerMovement/RUN[/Nintendo Wireless Gamepad/button6,/Nintendo
+      Wireless Gamepad1/button6]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMovement
