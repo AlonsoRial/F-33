@@ -92,6 +92,23 @@ MonoBehaviour:
     m_ActionId: a3bbd5e8-7319-426d-a096-bb0d8e440557
     m_ActionName: PlayerMovement/RUN[/Nintendo Wireless Gamepad/button6,/Nintendo
       Wireless Gamepad1/button6]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4042111337426084070}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bc0e952d-4cf0-4143-b291-bffa4da39deb
+    m_ActionName: PlayerMovement/GoBack[/Nintendo Wireless Gamepad/button5,/Nintendo
+      Wireless Gamepad1/button5]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMovement

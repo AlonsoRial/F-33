@@ -15,9 +15,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RUN",
+                    "name": "Accelerate",
                     "type": "Button",
                     "id": "a3bbd5e8-7319-426d-a096-bb0d8e440557",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GoBack",
+                    "type": "Button",
+                    "id": "bc0e952d-4cf0-4143-b291-bffa4da39deb",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -142,7 +151,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RUN",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c6c6837-3f48-43dd-9d02-3f1a027494d3",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoBack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

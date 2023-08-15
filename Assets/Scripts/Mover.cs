@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour
 
     private Vector2 inputVector = Vector2.zero;
 
-    bool corriendo;
+    bool corriendo, retroceder;
 
     private void Awake()
     {
@@ -51,6 +51,20 @@ public class Mover : MonoBehaviour
         Debug.Log("Mover : "+corriendo);
     }
 
+    public void SetInputBack(bool IsRunnin)
+    {
+        if (IsRunnin == true)
+        {
+            retroceder = true;
+        }
+        else
+        {
+            retroceder = false;
+        }
+
+        Debug.Log("Mover : " + corriendo);
+    }
+
 
     void Update()
     {
@@ -61,6 +75,11 @@ public class Mover : MonoBehaviour
         if (corriendo == true)
         {
             this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        }
+
+        if (retroceder == true)
+        {
+            this.transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
         }
 
     }

@@ -28,4 +28,9 @@ public class PlayerInputHandler : MonoBehaviour
         mover.SetInputRun(context.ReadValueAsButton());
     }
 
+    public void OnBack(CallbackContext context)
+    {
+        mover.SetInputBack(context.ReadValueAsButton());
+    }
+
 }
