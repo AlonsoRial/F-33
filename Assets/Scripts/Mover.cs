@@ -8,25 +8,23 @@ public class Mover : MonoBehaviour
     private float rotationSpeed = 5f;
 
     [SerializeField]
-    private float MoveSpeed = 3f;
+    private float moveSpeed = 3f;
 
     [SerializeField]
     private int playerIndex = 0;
 
-    private CharacterController controller;
+    Rigidbody rb;
 
-    [SerializeField]
-    private float gravityValue = -9.81f;
 
-    private Vector3 moveDirection = Vector3.zero;
-    private Vector3 moveRun = Vector3.zero;
+    //private Vector3 moveDirection = Vector3.zero;
+
     private Vector2 inputVector = Vector2.zero;
 
     bool corriendo;
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     public int GetPlayerIndex()
@@ -41,7 +39,16 @@ public class Mover : MonoBehaviour
 
     public void SetInputRun(bool IsRunnin)
     {
-        
+        if (IsRunnin == true)
+        {
+            corriendo = true;
+        }
+        else
+        {
+            corriendo = false;
+        }
+
+        Debug.Log("Mover : "+corriendo);
     }
 
 
@@ -50,21 +57,13 @@ public class Mover : MonoBehaviour
 
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up, rotationAmount);
-
-       
-
-
-
-
-    }
-
-
-    private void FixedUpdate()
-    {
-        moveDirection.y += gravityValue * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
-
         
+        if (corriendo == true)
+        {
+            this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        }
+
     }
+
 
 }

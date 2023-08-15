@@ -131,8 +131,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7823013973990180439, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7823013973990180439, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
       propertyPath: playerIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7823013973990180439, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
+      propertyPath: rotationSpeed
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3765886886010275943, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
       propertyPath: m_Name
@@ -3558,8 +3566,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+      propertyPath: MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: playerIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+      propertyPath: rotationSpeed
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4409838188846859282, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: m_Name

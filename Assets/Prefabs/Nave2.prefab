@@ -462,7 +462,8 @@ GameObject:
   - component: {fileID: 3765886886010275967}
   - component: {fileID: 3765886886010275936}
   - component: {fileID: -7823013973990180439}
-  - component: {fileID: 7312509068084100587}
+  - component: {fileID: -3027568289422341278}
+  - component: {fileID: -2888536857125581418}
   m_Layer: 0
   m_Name: Nave2
   m_TagString: Untagged
@@ -548,11 +549,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdeb1941b888ac4882415d357eff31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 5
   MoveSpeed: 3
   playerIndex: 1
   gravityValue: -9.81
---- !u!143 &7312509068084100587
-CharacterController:
+--- !u!54 &-3027568289422341278
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765886886010275943}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-2888536857125581418
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -562,13 +580,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0
-  m_Radius: 6
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 13.638828, y: 3.256053, z: 10.850529}
+  m_Center: {x: 0, y: -0.0000007748604, z: 0}
 --- !u!1 &3765886886098186955
 GameObject:
   m_ObjectHideFlags: 0
