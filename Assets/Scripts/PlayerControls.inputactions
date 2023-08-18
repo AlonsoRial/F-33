@@ -146,6 +146,17 @@
                 },
                 {
                     "name": "",
+                    "id": "fc6999ba-fe33-436e-a6e8-0cc53a79eadb",
+                    "path": "<DualShockGamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2438ac5d-a955-4fbd-983c-fb7b122e20b5",
                     "path": "<HID::Nintendo Wireless Gamepad>/button6",
                     "interactions": "",
@@ -157,8 +168,30 @@
                 },
                 {
                     "name": "",
+                    "id": "8792b2e1-a48d-43c0-aa0e-013ac6841a02",
+                    "path": "<DualShockGamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3c6c6837-3f48-43dd-9d02-3f1a027494d3",
                     "path": "<HID::Nintendo Wireless Gamepad>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e0754e8-bbb0-4151-8d48-e3c48c92f1bd",
+                    "path": "<DualShockGamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
