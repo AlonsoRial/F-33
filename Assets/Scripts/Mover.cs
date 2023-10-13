@@ -5,10 +5,21 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField]
-    private float rotationSpeed = 5f;
+    private float rotationSpeed = 10f;
+
+
 
     [SerializeField]
-    private float moveSpeed = 3f;
+    private float maxMoveSpeed = 15f;
+
+    [SerializeField]
+    private float maxMoveSpeedBack = 5f;
+
+    [SerializeField]
+    float speed = 0;
+
+    [SerializeField]
+    float acceleration = 0.6f;
 
     [SerializeField]
     private int playerIndex = 0;
@@ -68,18 +79,37 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-
+        /*
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up, rotationAmount);
-        
+        */
+
         if (corriendo == true)
         {
-            this.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            if (speed < maxMoveSpeed)
+            {
+                speed += acceleration * Time.deltaTime;
+                
+            }
+
+            this.transform.Rotate(Vector3.up* speed* inputVector.x * Time.deltaTime* rotationSpeed);
+
+            this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+            //transform.position.x = transform.position.x + speed * Time.deltaTime;
+
+            //this.transform.Translate(Vector3.forward * maxMoveSpeed * Time.deltaTime);
+        }
+        else {
+            if (speed >= 0)
+            {
+                speed -= 3* acceleration * Time.deltaTime;
+            }
         }
 
         if (retroceder == true)
         {
-            this.transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
+            this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
         }
 
     }
