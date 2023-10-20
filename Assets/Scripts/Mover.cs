@@ -16,7 +16,7 @@ public class Mover : MonoBehaviour
     private float maxMoveSpeedBack = 5f;
 
     [SerializeField]
-    float speed = 0;
+    float speed = 0f;
 
     [SerializeField]
     float acceleration = 0.6f;
@@ -84,6 +84,11 @@ public class Mover : MonoBehaviour
         transform.Rotate(Vector3.up, rotationAmount);
         */
 
+        if (speed != 0)
+        {
+            this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
+        }
+
         if (corriendo == true)
         {
             if (speed < maxMoveSpeed)
@@ -91,8 +96,6 @@ public class Mover : MonoBehaviour
                 speed += acceleration * Time.deltaTime;
                 
             }
-
-            this.transform.Rotate(Vector3.up* speed* inputVector.x * Time.deltaTime* rotationSpeed);
 
             this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
@@ -104,12 +107,14 @@ public class Mover : MonoBehaviour
             if (speed >= 0)
             {
                 speed -= 3* acceleration * Time.deltaTime;
+                this.transform.Translate(Vector3.forward * speed * Time.deltaTime );
             }
         }
 
         if (retroceder == true)
         {
             this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
+            this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
     }

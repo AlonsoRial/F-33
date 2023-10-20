@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -292,8 +292,12 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -7823013973990180439, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
+      propertyPath: acceleration
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -7823013973990180439, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
       propertyPath: rotationSpeed
-      value: 90
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3765886886010275943, guid: 8d5b95a5943afb84bbcfa52220a6e8c0, type: 3}
       propertyPath: m_Name
@@ -471,8 +475,12 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+      propertyPath: acceleration
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: rotationSpeed
-      value: 90
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4409838188846859282, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: m_Name
