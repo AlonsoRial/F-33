@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mover : MonoBehaviour
 {
+
+
     [SerializeField]
     private float rotationSpeed = 10f;
-
-
 
     [SerializeField]
     private float maxMoveSpeed = 15f;
@@ -26,6 +29,7 @@ public class Mover : MonoBehaviour
 
     Rigidbody rb;
 
+    public Image speedBar;
 
     //private Vector3 moveDirection = Vector3.zero;
 
@@ -36,7 +40,11 @@ public class Mover : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        
+        
     }
+
+
 
     public int GetPlayerIndex()
     {
@@ -79,6 +87,8 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
+
+      
         /*
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up, rotationAmount);
@@ -116,6 +126,14 @@ public class Mover : MonoBehaviour
             this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
             this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
         }
+
+        try {
+            speedBar.fillAmount = speed / maxMoveSpeed;
+        }
+        catch (NullReferenceException ex) {
+        
+        }
+        
 
     }
 
