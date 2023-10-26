@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     private InputAction menu;
 
     [SerializeField] private GameObject pauseUI;
+    [SerializeField] private GameObject pauseSpeedBar;
     [SerializeField] private bool isPause;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseUI.SetActive(false);
         isPause = false;
+        pauseSpeedBar.SetActive(true);
     }
 
     // Update is called once per frame
@@ -61,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.pause = true;
         pauseUI.SetActive(true);
+        pauseSpeedBar.SetActive(false);
     }
 
     public void DeactivateMenu()
@@ -69,6 +72,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseUI.SetActive(false);
         isPause = false;
+        pauseSpeedBar.SetActive(true);
     }
 
     public void GoTitle() {
