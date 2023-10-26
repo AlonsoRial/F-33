@@ -17,6 +17,11 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         playerControls = new PlayerControls();
+
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        pauseUI.SetActive(false);
+        isPause = false;
     }
 
     // Update is called once per frame
@@ -73,6 +78,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitGame()
     {
+
         Application.Quit();
     }
 

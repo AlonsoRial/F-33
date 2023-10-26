@@ -8,7 +8,9 @@ public class StartMenu : MonoBehaviour
 
     void Start()
     {
-        
+       
+        AudioListener.pause = false;
+ 
     }
 
     public void SinglePlayer()
