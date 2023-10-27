@@ -99,8 +99,10 @@ public class Mover : MonoBehaviour
             this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
-        if (corriendo == true)
+        if (corriendo == true || InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame())
         {
+            RumbleManager.instance.RumblePulse(0.25f,1f,0.25f);
+
             if (speed < maxMoveSpeed)
             {
                 speed += acceleration * Time.deltaTime;

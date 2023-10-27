@@ -53,6 +53,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RumbleAction"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ec7f4edf-5145-4e4c-9a13-1ab097cfc597"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -220,6 +229,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""GoBack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c31e1930-f126-4842-ad81-3f24000d0faa"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RumbleAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -292,6 +312,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Accelerate = m_PlayerMovement.FindAction("Accelerate", throwIfNotFound: true);
         m_PlayerMovement_GoBack = m_PlayerMovement.FindAction("GoBack", throwIfNotFound: true);
+        m_PlayerMovement_RumbleAction = m_PlayerMovement.FindAction("RumbleAction", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Escape = m_Menu.FindAction("Escape", throwIfNotFound: true);
@@ -357,6 +378,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Movement;
     private readonly InputAction m_PlayerMovement_Accelerate;
     private readonly InputAction m_PlayerMovement_GoBack;
+    private readonly InputAction m_PlayerMovement_RumbleAction;
     public struct PlayerMovementActions
     {
         private @PlayerControls m_Wrapper;
@@ -364,6 +386,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerMovement_Movement;
         public InputAction @Accelerate => m_Wrapper.m_PlayerMovement_Accelerate;
         public InputAction @GoBack => m_Wrapper.m_PlayerMovement_GoBack;
+        public InputAction @RumbleAction => m_Wrapper.m_PlayerMovement_RumbleAction;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -382,6 +405,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @GoBack.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnGoBack;
                 @GoBack.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnGoBack;
                 @GoBack.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnGoBack;
+                @RumbleAction.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnRumbleAction;
+                @RumbleAction.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnRumbleAction;
+                @RumbleAction.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnRumbleAction;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -395,6 +421,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @GoBack.started += instance.OnGoBack;
                 @GoBack.performed += instance.OnGoBack;
                 @GoBack.canceled += instance.OnGoBack;
+                @RumbleAction.started += instance.OnRumbleAction;
+                @RumbleAction.performed += instance.OnRumbleAction;
+                @RumbleAction.canceled += instance.OnRumbleAction;
             }
         }
     }
@@ -437,6 +466,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAccelerate(InputAction.CallbackContext context);
         void OnGoBack(InputAction.CallbackContext context);
+        void OnRumbleAction(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
