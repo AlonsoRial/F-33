@@ -130,7 +130,7 @@ public class Mover : MonoBehaviour
         try {
             speedBar.fillAmount = speed / maxMoveSpeed;
         }
-        catch (NullReferenceException ex) {
+        catch (NullReferenceException) {
         
         }
         
