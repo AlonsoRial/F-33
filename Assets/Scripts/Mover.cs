@@ -37,7 +37,6 @@ public class Mover : MonoBehaviour
 
     bool corriendo, retroceder, vibrar;
 
-    float duracionVibracion=0;
 
     private void Awake()
     {
