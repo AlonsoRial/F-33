@@ -22,7 +22,7 @@ public class Cronometro : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+    // Update is called once per frame f
     void Update()
     {
         Crono();
