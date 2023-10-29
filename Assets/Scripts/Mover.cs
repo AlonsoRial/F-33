@@ -35,7 +35,9 @@ public class Mover : MonoBehaviour
 
     private Vector2 inputVector = Vector2.zero;
 
-    bool corriendo, retroceder;
+    bool corriendo, retroceder, vibrar;
+
+    float duracionVibracion=0;
 
     private void Awake()
     {
@@ -85,10 +87,31 @@ public class Mover : MonoBehaviour
     }
 
 
+    public void SetRumber(bool IsRunnin) {
+
+        if (IsRunnin)
+        {
+            vibrar = true;
+        }
+        else {
+            vibrar = false;
+        }
+
+    }
+
+
+
     void Update()
     {
 
-      
+
+
+        if (vibrar)
+        {
+            RumbleManager.instance.RumblePulse(0.25f, 1f, 0.25f);
+        }
+   
+
         /*
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up, rotationAmount);
@@ -99,9 +122,9 @@ public class Mover : MonoBehaviour
             this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
-        if (corriendo == true || InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame())
+        if (corriendo == true /*|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
         {
-            RumbleManager.instance.RumblePulse(0.25f,1f,0.25f);
+           
 
             if (speed < maxMoveSpeed)
             {

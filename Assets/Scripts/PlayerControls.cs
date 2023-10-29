@@ -126,7 +126,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/hat"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Switch"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -137,7 +137,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""PS4"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -148,7 +148,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/button6"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Switch"",
                     ""action"": ""Accelerate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -159,7 +159,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""PS4"",
                     ""action"": ""Accelerate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -192,7 +192,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/button5"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Switch"",
                     ""action"": ""GoBack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -203,7 +203,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""PS4"",
                     ""action"": ""GoBack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -236,7 +236,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""PS4"",
                     ""action"": ""RumbleAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -264,7 +264,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""PS4"",
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -286,7 +286,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/button9"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Switch"",
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -297,7 +297,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/button10"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Switch"",
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -305,7 +305,30 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""PS4"",
+            ""bindingGroup"": ""PS4"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<DualShockGamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Switch"",
+            ""bindingGroup"": ""Switch"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<HID::Nintendo Wireless Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // PlayerMovement
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
@@ -461,6 +484,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+    private int m_PS4SchemeIndex = -1;
+    public InputControlScheme PS4Scheme
+    {
+        get
+        {
+            if (m_PS4SchemeIndex == -1) m_PS4SchemeIndex = asset.FindControlSchemeIndex("PS4");
+            return asset.controlSchemes[m_PS4SchemeIndex];
+        }
+    }
+    private int m_SwitchSchemeIndex = -1;
+    public InputControlScheme SwitchScheme
+    {
+        get
+        {
+            if (m_SwitchSchemeIndex == -1) m_SwitchSchemeIndex = asset.FindControlSchemeIndex("Switch");
+            return asset.controlSchemes[m_SwitchSchemeIndex];
+        }
+    }
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);

@@ -33,4 +33,9 @@ public class PlayerInputHandler : MonoBehaviour
         mover.SetInputBack(context.ReadValueAsButton());
     }
 
+    public void OnRumber(CallbackContext context) {
+        mover.SetRumber(context.ReadValueAsButton());
+    }
+
+
 }

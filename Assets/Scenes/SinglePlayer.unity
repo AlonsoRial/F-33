@@ -1185,7 +1185,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
       propertyPath: m_MaxPlayerCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5986145507645295553, guid: f289635bdf4b31e489ed916463203452, type: 3}
       propertyPath: m_Name
