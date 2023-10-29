@@ -35,7 +35,11 @@ public class Mover : MonoBehaviour
 
     private Vector2 inputVector = Vector2.zero;
 
-    bool corriendo, retroceder, vibrar;
+    bool corriendo, retroceder;
+
+    public bool vibrar;
+
+
 
 
     private void Awake()
@@ -107,7 +111,7 @@ public class Mover : MonoBehaviour
 
         if (vibrar)
         {
-            RumbleManager.instance.RumblePulse(0.25f, 1f, 0.25f);
+            RumbleManager.instance.RumblePulse(0.15f, 0.50f, 0.01f);
         }
    
 

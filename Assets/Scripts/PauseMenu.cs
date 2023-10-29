@@ -10,13 +10,21 @@ public class PauseMenu : MonoBehaviour
     private PlayerControls playerControls;
     private InputAction menu;
 
+
+
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject pauseSpeedBar;
     [SerializeField] private bool isPause;
 
+    
+
+    private Mover mover;
+
     // Start is called before the first frame update
     void Awake()
     {
+      
+
         playerControls = new PlayerControls();
 
         Time.timeScale = 1;
@@ -24,7 +32,10 @@ public class PauseMenu : MonoBehaviour
         pauseUI.SetActive(false);
         isPause = false;
         pauseSpeedBar.SetActive(true);
+        
     }
+
+  
 
     // Update is called once per frame
     void Update()
@@ -34,8 +45,13 @@ public class PauseMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        
+
         menu = playerControls.Menu.Escape;
+
         menu.Enable();
+
+        
 
         menu.performed += Pause;
     }
@@ -43,6 +59,7 @@ public class PauseMenu : MonoBehaviour
     private void OnDisable()
     {
         menu.Disable();
+        
     }
 
     void Pause(InputAction.CallbackContext context) {
@@ -51,10 +68,13 @@ public class PauseMenu : MonoBehaviour
 
         if (isPause)
         {
+           
             ActivateMenu();
         }
         else {
+        
             DeactivateMenu();
+            
         }
     }
 
@@ -64,6 +84,14 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = true;
         pauseUI.SetActive(true);
         pauseSpeedBar.SetActive(false);
+
+        try
+        {
+            mover.vibrar = false;
+        }
+        catch (Exception) { }
+
+        
     }
 
     public void DeactivateMenu()
