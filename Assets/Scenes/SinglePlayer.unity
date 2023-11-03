@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1006,6 +1006,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
+      propertyPath: rayDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667676550604821333, guid: 30c173f4b9c5fc94fa2c0fbcde5000d7, type: 3}
       propertyPath: acceleration
       value: 0.9
       objectReference: {fileID: 0}
@@ -1276,10 +1280,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
     - target: {fileID: -7023974396876390944, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b26fb05057e985e43ab2bc1c5fb95f16, type: 2}
+    - target: {fileID: -6763858364670572316, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
     - target: {fileID: -6093592463355912122, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1288,9 +1304,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: b26fb05057e985e43ab2bc1c5fb95f16, type: 2}
+    - target: {fileID: -2045257923548263128, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
     - target: {fileID: -1806680513116206669, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
       objectReference: {fileID: 0}
     - target: {fileID: -1461304994638716399, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
@@ -1308,10 +1332,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
+    - target: {fileID: -466329591000292508, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
     - target: {fileID: -241587437493983680, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b26fb05057e985e43ab2bc1c5fb95f16, type: 2}
+    - target: {fileID: -208595431880416365, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
+    - target: {fileID: 281855664364225751, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
+      objectReference: {fileID: 0}
     - target: {fileID: 882129737928793925, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1331,6 +1371,10 @@ PrefabInstance:
     - target: {fileID: 6745302439343835087, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Muro
       objectReference: {fileID: 0}
     - target: {fileID: 8567717000986892130, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled

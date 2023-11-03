@@ -37,8 +37,7 @@ public class Mover : MonoBehaviour
 
     bool corriendo, retroceder;
 
-    public bool vibrar;
-
+    public bool vibrar, chocar;
 
 
 
@@ -47,6 +46,15 @@ public class Mover : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         
+    }
+
+   private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Muro")
+        {
+            chocar = true;
+            Debug.Log("CHOCANDO ");
+        }
     }
 
 
@@ -72,7 +80,7 @@ public class Mover : MonoBehaviour
             corriendo = false;
         }
 
-        Debug.Log("Mover : "+corriendo);
+       
     }
 
     public void SetInputBack(bool IsRunnin)
@@ -86,7 +94,7 @@ public class Mover : MonoBehaviour
             retroceder = false;
         }
 
-        Debug.Log("Mover : " + corriendo);
+        
     }
 
 
@@ -102,12 +110,17 @@ public class Mover : MonoBehaviour
 
     }
 
+   
+
+   
 
 
     void Update()
     {
-
-
+        if (chocar)
+        {
+            speed = 0;
+        }
 
         if (vibrar)
         {
@@ -125,7 +138,7 @@ public class Mover : MonoBehaviour
             this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
-        if (corriendo == true /*|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
+        if (corriendo == true  && chocar==false/*|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
         {
            
 
@@ -151,6 +164,7 @@ public class Mover : MonoBehaviour
 
         if (retroceder == true)
         {
+            chocar = false;
             this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
             this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
         }
