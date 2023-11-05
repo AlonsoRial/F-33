@@ -119,7 +119,7 @@ public class Mover : MonoBehaviour
     {
         if (chocar)
         {
-            speed = 0;
+           speed= speed/1.1f;
         }
 
         if (vibrar)
@@ -138,7 +138,7 @@ public class Mover : MonoBehaviour
             this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
-        if (corriendo == true  && chocar==false/*|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
+        if (corriendo == true  /*&& chocar==false|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
         {
            
 
