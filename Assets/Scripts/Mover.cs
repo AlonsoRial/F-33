@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class Mover : MonoBehaviour
 {
-
+    public ParticleSystem lanza;
+    public ParticleSystem lanza2;
+    public ParticleSystem lanza3;
 
     [SerializeField]
     private float rotationSpeed = 10f;
@@ -45,10 +47,18 @@ public class Mover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         
-        
     }
 
-   private void OnCollisionEnter(Collision collision)
+    private void Start()
+    {
+
+
+        lanza.Stop();
+        lanza2.Stop();
+        lanza3.Stop();
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Muro")
         {
@@ -140,7 +150,10 @@ public class Mover : MonoBehaviour
 
         if (corriendo == true  /*&& chocar==false|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
         {
-           
+
+            lanza.Play();
+            lanza2.Play();
+            lanza3.Play();
 
             if (speed < maxMoveSpeed)
             {
@@ -155,6 +168,9 @@ public class Mover : MonoBehaviour
             //this.transform.Translate(Vector3.forward * maxMoveSpeed * Time.deltaTime);
         }
         else {
+            lanza.Stop();
+            lanza2.Stop();
+            lanza3.Stop();
             if (speed >= 0)
             {
                 speed -= 3* acceleration * Time.deltaTime;
