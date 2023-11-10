@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549472691235322626}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 63.305534, y: 6.0869074, z: -64.17801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &746565336679273621
 MonoBehaviour:
@@ -130,6 +130,22 @@ MonoBehaviour:
     m_ActionId: 52a9cc81-3a00-4a2d-82a8-146597438cc3
     m_ActionName: Menu/Escape[/DualShock4GamepadHID/start,/Keyboard/space,/Nintendo
       Wireless Gamepad/button9,/Nintendo Wireless Gamepad/button10]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4042111337426084070}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: SwtichCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e3c45f08-59c6-4e95-aa86-58c17c05391d
+    m_ActionName: PlayerMovement/CameraBack[/Nintendo Wireless Gamepad/button3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMovement

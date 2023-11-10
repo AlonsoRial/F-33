@@ -37,5 +37,10 @@ public class PlayerInputHandler : MonoBehaviour
         mover.SetRumber(context.ReadValueAsButton());
     }
 
+    public void SwtichCamera(CallbackContext context)
+    {
+        mover.SetCamera(context.ReadValueAsButton());
+    }
+
 
 }

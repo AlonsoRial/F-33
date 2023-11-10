@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 public class Mover : MonoBehaviour
 {
+    public Camera camera1;
+    public Camera camera2;
+
+    public bool boolCamera;
+
     public ParticleSystem lanza;
     public ParticleSystem lanza2;
     public ParticleSystem lanza3;
@@ -121,12 +126,27 @@ public class Mover : MonoBehaviour
     }
 
    
-
+    public void SetCamera(bool atras)
+    {
+        boolCamera = atras;
+    }
    
 
 
     void Update()
     {
+        if (boolCamera)
+        {
+            camera2.enabled = true;
+            camera1.enabled = false;
+        }
+        else
+        {
+            camera2.enabled = false;
+            camera1.enabled = true;
+        }
+        
+
         if (chocar)
         {
            speed= speed/1.1f;
