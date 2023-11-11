@@ -256,7 +256,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/button3"",
                     ""interactions"": ""Hold"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Switch"",
+                    ""action"": ""CameraBack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29cdb52b-fe4b-40cb-b7a2-b83366a52c9e"",
+                    ""path"": ""<DualShockGamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
                     ""action"": ""CameraBack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
