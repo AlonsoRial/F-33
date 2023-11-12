@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class RumbleManager : MonoBehaviour
 {
@@ -11,25 +12,33 @@ public class RumbleManager : MonoBehaviour
 
     private Coroutine stoRumbleAfterTimeCoroutine;
 
+    public Toggle toggle3;
+
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-
+        toggle3 = instance.toggle3;
 
     }
 
 
-    public void RumblePulse(float lowFrequency, float highFrequency, float duration) 
+    public void RumblePulse(float lowFrequency, float highFrequency, float duration)
     {
-        pad = Gamepad.current;
+        if (toggle3.isOn)
+        {
 
-        if (pad != null) {
-            pad.SetMotorSpeeds(lowFrequency, highFrequency);
+            pad = Gamepad.current;
 
-            stoRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, pad)); 
+            if (pad != null)
+            {
+                pad.SetMotorSpeeds(lowFrequency, highFrequency);
+
+                stoRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, pad));
+            }
         }
     }
 

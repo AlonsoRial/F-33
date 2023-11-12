@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseSpeedBar;
     [SerializeField] private bool isPause;
 
+
     
+
 
     private Mover mover;
 
@@ -24,7 +27,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
       
-
+       
         playerControls = new PlayerControls();
 
         Time.timeScale = 1;
@@ -114,5 +117,9 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
+
+    
+
+    
 
 }
