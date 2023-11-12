@@ -70,6 +70,25 @@ public class Mover : MonoBehaviour
             chocar = true;
             Debug.Log("CHOCANDO ");
         }
+
+        if (collision.collider.tag == "Suelo") {
+            
+            if ((transform.eulerAngles.x >= 80 && transform.eulerAngles.x <= 180) || (transform.eulerAngles.z >= 80 && transform.eulerAngles.z <= 180))
+            {
+                Debug.Log("SUELO");
+                
+                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            }
+
+            if ((transform.eulerAngles.x >= -80 && transform.eulerAngles.x <= -180) || (transform.eulerAngles.z >= -80 && transform.eulerAngles.z <= -180))
+            {
+                Debug.Log("SUELO");
+                
+                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            }
+
+        }
+
     }
 
 
@@ -136,17 +155,6 @@ public class Mover : MonoBehaviour
     void Update()
     {
 
-        if ((transform.eulerAngles.x >= 80 && transform.eulerAngles.x <= 180) || (transform.eulerAngles.z >= 80 && transform.eulerAngles.z <= 180))
-        {
-            // Establece la rotación en X y Z a 0 grados
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        }
-
-        if ((transform.eulerAngles.x >= -80 && transform.eulerAngles.x <= -180) || (transform.eulerAngles.z >= -80 && transform.eulerAngles.z <= -180))
-        {
-            // Establece la rotación en X y Z a 0 grados
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        }
 
 
         if (boolCamera)

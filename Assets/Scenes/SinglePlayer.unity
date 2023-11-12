@@ -1363,6 +1363,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8961359253771211100, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1443,6 +1447,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Muro
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     - target: {fileID: -7023974396876390944, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1459,6 +1467,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: b26fb05057e985e43ab2bc1c5fb95f16, type: 2}
+    - target: {fileID: -2963664326274720042, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     - target: {fileID: -2045257923548263128, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_TagString
       value: Muro
@@ -1478,6 +1490,10 @@ PrefabInstance:
     - target: {fileID: -1120989108687609925, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1063203228461421988, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: -804731622281664130, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
@@ -1522,6 +1538,14 @@ PrefabInstance:
     - target: {fileID: 4321514657177891973, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767400413853537203, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
       objectReference: {fileID: 0}
     - target: {fileID: 6745302439343835087, guid: a709e06c0dd3ed541bdf36d576b8eb0b, type: 3}
       propertyPath: m_Enabled
