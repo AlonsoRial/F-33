@@ -174,10 +174,7 @@ public class Mover : MonoBehaviour
            speed= speed/1.1f;
         }
 
-        if (vibrar)
-        {
-            RumbleManager.instance.RumblePulse(0.15f, 0.50f, 0.01f);
-        }
+     
    
 
         /*
