@@ -174,8 +174,12 @@ public class Mover : MonoBehaviour
            speed= speed/1.1f;
         }
 
-     
-   
+        if (vibrar)
+        {
+            Debug.Log("OOO");
+            PlayerInputHandler.instance.RumblePulse(0.15f, 0.50f, 0.01f);
+        }
+
 
         /*
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;

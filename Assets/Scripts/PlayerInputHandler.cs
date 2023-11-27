@@ -9,8 +9,16 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerInput playerInput;
     private Mover mover;
+
+    private Gamepad pad, pad2;
+
+    private Coroutine stoRumbleAfterTimeCoroutine;
+
+    public static PlayerInputHandler instance;
+
     private void Awake()
     {
+        instance = this;
         playerInput = GetComponent<PlayerInput>();
         var movers = FindObjectsOfType<Mover>();
         var index = playerInput.playerIndex;
@@ -39,4 +47,49 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
 
+    public void RumblePulse(float lowFrequency, float highFrequency, float duration)
+    {
+
+        if (pad == null) {
+            pad = playerInput.GetDevice<Gamepad>();
+        }
+        
+        if(pad !=null && pad2 == null)
+        {
+            pad2 = playerInput.GetDevice<Gamepad>();
+        }
+        
+            
+
+            
+        pad.SetMotorSpeeds(lowFrequency, highFrequency);
+
+        stoRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, pad));
+            
+
+       
+        pad2.SetMotorSpeeds(lowFrequency, highFrequency);
+
+        stoRumbleAfterTimeCoroutine = StartCoroutine(StopRumble(duration, pad2));
+        
+
+    }
+
+    public void OnRumber(CallbackContext context) {
+        mover.SetRumber(context.ReadValueAsButton());
+    }
+
+    private IEnumerator StopRumble(float duration, Gamepad pad)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        pad.SetMotorSpeeds(0f, 0f);
+    }
 }
+
