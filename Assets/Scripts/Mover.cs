@@ -44,7 +44,7 @@ public class Mover : MonoBehaviour
 
     bool corriendo, retroceder;
 
-    public bool vibrar, chocar;
+    public bool  chocar;
 
 
 
@@ -132,18 +132,7 @@ public class Mover : MonoBehaviour
     }
 
 
-    public void SetRumber(bool IsRunnin) {
-
-        if (IsRunnin)
-        {
-            vibrar = true;
-        }
-        else {
-            vibrar = false;
-        }
-
-    }
-
+ 
    
     public void SetCamera(bool atras)
     {
@@ -174,11 +163,7 @@ public class Mover : MonoBehaviour
            speed= speed/1.1f;
         }
 
-        if (vibrar)
-        {
-            Debug.Log("OOO");
-            PlayerInputHandler.instance.RumblePulse(0.15f, 0.50f, 0.01f);
-        }
+       
 
 
         /*
