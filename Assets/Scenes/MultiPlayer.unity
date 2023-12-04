@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2286,8 +2286,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
+      propertyPath: m_AllowJoining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
+      propertyPath: m_JoinBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
       propertyPath: m_MaxPlayerCount
-      value: 2
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_Id
+      value: 02dda370-e632-4e91-abac-0732b3d51d0a
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986145507645295552, guid: f289635bdf4b31e489ed916463203452, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_Name
+      value: Join
       objectReference: {fileID: 0}
     - target: {fileID: 5986145507645295553, guid: f289635bdf4b31e489ed916463203452, type: 3}
       propertyPath: m_Name

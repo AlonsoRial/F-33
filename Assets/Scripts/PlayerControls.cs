@@ -55,15 +55,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RumbleAction"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""ec7f4edf-5145-4e4c-9a13-1ab097cfc597"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""CameraBack"",
                     ""type"": ""Button"",
                     ""id"": ""e3c45f08-59c6-4e95-aa86-58c17c05391d"",
@@ -241,17 +232,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c31e1930-f126-4842-ad81-3f24000d0faa"",
-                    ""path"": ""<DualShockGamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PS4"",
-                    ""action"": ""RumbleAction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1832f520-edb7-4d5d-8927-7bb0ba3a864f"",
                     ""path"": ""<HID::Nintendo Wireless Gamepad>/button3"",
                     ""interactions"": ""Hold"",
@@ -366,7 +346,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Accelerate = m_PlayerMovement.FindAction("Accelerate", throwIfNotFound: true);
         m_PlayerMovement_GoBack = m_PlayerMovement.FindAction("GoBack", throwIfNotFound: true);
-        m_PlayerMovement_RumbleAction = m_PlayerMovement.FindAction("RumbleAction", throwIfNotFound: true);
         m_PlayerMovement_CameraBack = m_PlayerMovement.FindAction("CameraBack", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
@@ -435,7 +414,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Movement;
     private readonly InputAction m_PlayerMovement_Accelerate;
     private readonly InputAction m_PlayerMovement_GoBack;
-    private readonly InputAction m_PlayerMovement_RumbleAction;
     private readonly InputAction m_PlayerMovement_CameraBack;
     public struct PlayerMovementActions
     {
@@ -444,7 +422,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerMovement_Movement;
         public InputAction @Accelerate => m_Wrapper.m_PlayerMovement_Accelerate;
         public InputAction @GoBack => m_Wrapper.m_PlayerMovement_GoBack;
-        public InputAction @RumbleAction => m_Wrapper.m_PlayerMovement_RumbleAction;
         public InputAction @CameraBack => m_Wrapper.m_PlayerMovement_CameraBack;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
@@ -464,9 +441,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @GoBack.started += instance.OnGoBack;
             @GoBack.performed += instance.OnGoBack;
             @GoBack.canceled += instance.OnGoBack;
-            @RumbleAction.started += instance.OnRumbleAction;
-            @RumbleAction.performed += instance.OnRumbleAction;
-            @RumbleAction.canceled += instance.OnRumbleAction;
             @CameraBack.started += instance.OnCameraBack;
             @CameraBack.performed += instance.OnCameraBack;
             @CameraBack.canceled += instance.OnCameraBack;
@@ -483,9 +457,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @GoBack.started -= instance.OnGoBack;
             @GoBack.performed -= instance.OnGoBack;
             @GoBack.canceled -= instance.OnGoBack;
-            @RumbleAction.started -= instance.OnRumbleAction;
-            @RumbleAction.performed -= instance.OnRumbleAction;
-            @RumbleAction.canceled -= instance.OnRumbleAction;
             @CameraBack.started -= instance.OnCameraBack;
             @CameraBack.performed -= instance.OnCameraBack;
             @CameraBack.canceled -= instance.OnCameraBack;
@@ -575,7 +546,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAccelerate(InputAction.CallbackContext context);
         void OnGoBack(InputAction.CallbackContext context);
-        void OnRumbleAction(InputAction.CallbackContext context);
         void OnCameraBack(InputAction.CallbackContext context);
     }
     public interface IMenuActions

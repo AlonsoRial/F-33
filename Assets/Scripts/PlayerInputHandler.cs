@@ -7,28 +7,25 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    private float lowA = 0.3f;
+    private float highA = 0.8f;
+    private Gamepad gamepad;
     private PlayerInput playerInput;
     private Mover mover;
-
-    private Gamepad pad;
-
-    private Coroutine stoRumbleAfterTimeCoroutine;
-
-    public static PlayerInputHandler instance;
-
     private void Awake()
     {
-        instance = this;
         playerInput = GetComponent<PlayerInput>();
         var movers = FindObjectsOfType<Mover>();
         var index = playerInput.playerIndex;
         mover = movers.FirstOrDefault(m => m.GetPlayerIndex() == index);
+
     }
 
     public void OnMove(CallbackContext context)
     {
         if (mover != null)
             mover.SetInputVector(context.ReadValue<Vector2>());
+
     }
 
     public void OnRun(CallbackContext context)
@@ -41,11 +38,57 @@ public class PlayerInputHandler : MonoBehaviour
         mover.SetInputBack(context.ReadValueAsButton());
     }
 
+
     public void SwtichCamera(CallbackContext context)
     {
         mover.SetCamera(context.ReadValueAsButton());
     }
 
+    private void GameIni()
+    {
+        gamepad = Gamepad.all.SingleOrDefault(g => playerInput.devices.Any(d => d.deviceId == g.deviceId));
+    }
+
+    public void StopRumble()
+    {
+        var gamepad1 = gamepad;
+
+        if (gamepad1 != null)
+        {
+            gamepad1.SetMotorSpeeds(0, 0);
+        }
+
+    }
+
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        StopRumble();
+    }
+
+
+    private void Update()
+    {
+        GameIni();
+
+        var gamepad1 = gamepad;
+
+
+
+        if (gamepad1 == null) { return; }
+
+
+        if (gamepad1.rightTrigger.isPressed)
+        {
+
+            gamepad1.SetMotorSpeeds(lowA, highA);
+
+        }
+        else
+        {
+            StopRumble();
+        }
+    }
 
 }
-
