@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Mover : MonoBehaviour
 {
+
+
     public Camera camera1;
     public Camera camera2;
 
@@ -44,15 +48,17 @@ public class Mover : MonoBehaviour
 
     bool corriendo, retroceder;
 
-    public bool vibrar, chocar;
-
+    public bool  chocar;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        
+      
+
     }
+
+
 
     private void Start()
     {
@@ -71,25 +77,29 @@ public class Mover : MonoBehaviour
             Debug.Log("CHOCANDO ");
         }
 
-        if (collision.collider.tag == "Suelo") {
-            
+        if (collision.collider.tag == "Suelo")
+        {
+
             if ((transform.eulerAngles.x >= 80 && transform.eulerAngles.x <= 180) || (transform.eulerAngles.z >= 80 && transform.eulerAngles.z <= 180))
             {
                 Debug.Log("SUELO");
-                
+
                 transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
             }
 
             if ((transform.eulerAngles.x >= -80 && transform.eulerAngles.x <= -180) || (transform.eulerAngles.z >= -80 && transform.eulerAngles.z <= -180))
             {
                 Debug.Log("SUELO");
-                
+
                 transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
             }
 
         }
 
     }
+
+
+
 
 
 
@@ -114,7 +124,7 @@ public class Mover : MonoBehaviour
             corriendo = false;
         }
 
-       
+
     }
 
     public void SetInputBack(bool IsRunnin)
@@ -128,35 +138,21 @@ public class Mover : MonoBehaviour
             retroceder = false;
         }
 
-        
-    }
-
-
-    public void SetRumber(bool IsRunnin) {
-
-        if (IsRunnin)
-        {
-            vibrar = true;
-        }
-        else {
-            vibrar = false;
-        }
 
     }
 
-   
+
+
     public void SetCamera(bool atras)
     {
         boolCamera = atras;
     }
-   
+
 
 
     void Update()
     {
-
-
-
+        
         if (boolCamera)
         {
             camera2.enabled = true;
@@ -167,18 +163,12 @@ public class Mover : MonoBehaviour
             camera2.enabled = false;
             camera1.enabled = true;
         }
-        
+
 
         if (chocar)
         {
-           speed= speed/1.1f;
+            speed = speed / 1.1f;
         }
-
-        if (vibrar)
-        {
-            RumbleManager.instance.RumblePulse(0.15f, 0.50f, 0.01f);
-        }
-   
 
         /*
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
@@ -200,7 +190,7 @@ public class Mover : MonoBehaviour
             if (speed < maxMoveSpeed)
             {
                 speed += acceleration * Time.deltaTime;
-                
+
             }
 
             this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -209,14 +199,15 @@ public class Mover : MonoBehaviour
 
             //this.transform.Translate(Vector3.forward * maxMoveSpeed * Time.deltaTime);
         }
-        else {
+        else
+        {
             lanza.Stop();
             lanza2.Stop();
             lanza3.Stop();
             if (speed >= 0)
             {
-                speed -= 3* acceleration * Time.deltaTime;
-                this.transform.Translate(Vector3.forward * speed * Time.deltaTime );
+                speed -= 3 * acceleration * Time.deltaTime;
+                this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
         }
 
@@ -227,13 +218,17 @@ public class Mover : MonoBehaviour
             this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
-        try {
+        try
+        {
             speedBar.fillAmount = speed / maxMoveSpeed;
         }
-        catch (NullReferenceException) {
-        
+        catch (NullReferenceException)
+        {
+
         }
+
         
+
 
     }
 

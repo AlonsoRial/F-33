@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenuMulti : MonoBehaviour
 {
     private PlayerControls playerControls;
     private InputAction menu;
@@ -14,7 +14,8 @@ public class PauseMenu : MonoBehaviour
 
 
     [SerializeField] private GameObject pauseUI;
-    [SerializeField] private GameObject pauseSpeedBar;
+    [SerializeField] private GameObject pauseSpeedBarJ1;
+    [SerializeField] private GameObject pauseSpeedBarJ2;
     [SerializeField] private bool isPause;
 
 
@@ -34,8 +35,9 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseUI.SetActive(false);
         isPause = false;
-        pauseSpeedBar.SetActive(true);
-        
+        pauseSpeedBarJ1.SetActive(true);
+        pauseSpeedBarJ2.SetActive(true);
+
     }
 
   
@@ -86,11 +88,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.pause = true;
         pauseUI.SetActive(true);
-        pauseSpeedBar.SetActive(false);
+        pauseSpeedBarJ2.SetActive(false);
+        pauseSpeedBarJ1.SetActive(false);
 
         try
         {
-            //mover.vibrar = false;
+           // mover.vibrar = false;
         }
         catch (Exception) { }
 
@@ -103,7 +106,8 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseUI.SetActive(false);
         isPause = false;
-        pauseSpeedBar.SetActive(true);
+        pauseSpeedBarJ2.SetActive(true);
+        pauseSpeedBarJ1.SetActive(true);
     }
 
     public void GoTitle() {
