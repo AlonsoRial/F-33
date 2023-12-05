@@ -167,8 +167,10 @@ public class Mover : MonoBehaviour
 
         if (chocar)
         {
-            speed = speed / 1.1f;
+            speed = speed / 2.7f;
+            chocar=false;
         }
+
 
         /*
         float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
@@ -213,7 +215,7 @@ public class Mover : MonoBehaviour
 
         if (retroceder == true)
         {
-            chocar = false;
+            
             this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
             this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
         }
