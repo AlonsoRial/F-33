@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -12,6 +13,9 @@ public class PlayerInputHandler : MonoBehaviour
     private Gamepad gamepad;
     private PlayerInput playerInput;
     private Mover mover;
+
+    public static bool vibra = true;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -20,6 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
         mover = movers.FirstOrDefault(m => m.GetPlayerIndex() == index);
 
     }
+
 
     public void OnMove(CallbackContext context)
     {
@@ -81,14 +86,30 @@ public class PlayerInputHandler : MonoBehaviour
 
         if (gamepad1.rightTrigger.isPressed)
         {
+            
+            if (vibra ==true)
+            {
+                Debug.Log("YES");
+                gamepad1.SetMotorSpeeds(lowA, highA);
+            }
+            else
+            {
+                Debug.Log("NO");
+            }
 
-            gamepad1.SetMotorSpeeds(lowA, highA);
+            
 
         }
         else
         {
             StopRumble();
         }
+    }
+
+    public void Changed(bool change)
+    {
+        Debug.Log("CHANGE " + change);
+        vibra = change;
     }
 
 }
