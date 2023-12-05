@@ -93,7 +93,7 @@ public class PauseMenuMulti : MonoBehaviour
 
         try
         {
-            mover.vibrar = false;
+           // mover.vibrar = false;
         }
         catch (Exception) { }
 
