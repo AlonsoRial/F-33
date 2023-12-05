@@ -157,8 +157,8 @@ ModelImporter:
       name: Idle
       takeName: Scene
       internalID: -626948583029366203
-      firstFrame: 16
-      lastFrame: 20
+      firstFrame: 36
+      lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
