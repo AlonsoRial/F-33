@@ -50,12 +50,11 @@ public class Mover : MonoBehaviour
 
     public bool  chocar;
 
-    Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+      
 
     }
 
@@ -64,7 +63,7 @@ public class Mover : MonoBehaviour
     private void Start()
     {
 
-        
+
         lanza.Stop();
         lanza2.Stop();
         lanza3.Stop();
@@ -180,22 +179,6 @@ public class Mover : MonoBehaviour
 
         if (speed != 0)
         {
-            if (inputVector.x>0f &&corriendo )
-            {
-                animator.SetBool("VuD", false);
-                animator.SetBool("GiD",true);
-            }
-            else if (inputVector.x <1f && corriendo) 
-            {
-                animator.SetBool("GiD", false);
-                animator.SetBool("VuD", true);
-            }
-            else
-            {
-                animator.SetBool("GiD", false);
-            }
-
-
             this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
         }
 
