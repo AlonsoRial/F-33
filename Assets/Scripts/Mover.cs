@@ -44,18 +44,18 @@ public class Mover : MonoBehaviour
 
     //private Vector3 moveDirection = Vector3.zero;
 
-    private Vector2 inputVector = Vector2.zero;
+    public Vector2 inputVector = Vector2.zero;
 
-    bool corriendo, retroceder;
+    public bool corriendo, retroceder;
 
     public bool  chocar;
 
-    Animator animator;
+    //public Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+      //  animator = GetComponent<Animator>();
 
     }
 
@@ -180,6 +180,7 @@ public class Mover : MonoBehaviour
 
         if (speed != 0)
         {
+            /*
             if (inputVector.x>0f &&corriendo )
             {
                 animator.SetBool("VuD", false);
@@ -194,7 +195,7 @@ public class Mover : MonoBehaviour
             {
                 animator.SetBool("GiD", false);
             }
-
+            */
 
             this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
         }
