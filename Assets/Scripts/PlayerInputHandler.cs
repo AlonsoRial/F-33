@@ -89,12 +89,12 @@ public class PlayerInputHandler : MonoBehaviour
             
             if (vibra ==true)
             {
-                Debug.Log("YES");
+               // Debug.Log("YES");
                 gamepad1.SetMotorSpeeds(lowA, highA);
             }
             else
             {
-                Debug.Log("NO");
+               // Debug.Log("NO");
             }
 
             
@@ -108,7 +108,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void Changed(bool change)
     {
-        Debug.Log("CHANGE " + change);
+      //  Debug.Log("CHANGE " + change);
         vibra = change;
     }
 
