@@ -1125,10 +1125,10 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690405693}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4ca84605358202a43aa49f373485ba8d, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -3659,7 +3659,7 @@ PrefabInstance:
       objectReference: {fileID: 1336502851}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.46
+      value: 62.2
       objectReference: {fileID: 0}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3667,7 +3667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.92
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3687,15 +3687,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.000004635777
+      value: -0.000005468354
       objectReference: {fileID: 0}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.00007
+      value: -89.99992
       objectReference: {fileID: 0}
     - target: {fileID: 4628781881930187769, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.0508776
+      value: -0.2175421
       objectReference: {fileID: 0}
     - target: {fileID: 6280866768533788332, guid: 83720d2b673d0b44ca5fba230b120e41, type: 3}
       propertyPath: m_Name
