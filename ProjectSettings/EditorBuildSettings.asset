@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MultiPlayer.unity
     guid: 17b72ed54a79309459e9077e58afa0dc
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 9257b4fee35d09e4f9b388dcdedbdeb6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fd10d437f294d6b47bbc94da29c28d42, type: 2}

@@ -23,6 +23,16 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(2);
     }
 
+    public void Creditos()
+    {
+        SceneManager.LoadSceneAsync(3);
+    }
+
+    public void CerrarCreditos()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
