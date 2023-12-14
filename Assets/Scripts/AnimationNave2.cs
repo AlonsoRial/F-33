@@ -9,18 +9,22 @@ public class AnimationNave2 : MonoBehaviour
     static Mover mover;
     Vector2 previousInputVector = Vector2.zero;
 
+    private Temporizador temporizador;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         mover = GetComponentInParent<Mover>();
-      
+
+        temporizador = GetComponentInParent<Temporizador>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (mover.corriendo)
+        if (mover.corriendo && temporizador.tempo == true)
         {
             /*
             if (mover.inputVector.x > 0.0f)

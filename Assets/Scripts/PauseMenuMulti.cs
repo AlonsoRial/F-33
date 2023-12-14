@@ -18,8 +18,8 @@ public class PauseMenuMulti : MonoBehaviour
     [SerializeField] private GameObject pauseSpeedBarJ2;
     [SerializeField] private bool isPause;
 
+    [SerializeField] private GameObject tempori;
 
-    
 
 
     private Mover mover;
@@ -37,6 +37,8 @@ public class PauseMenuMulti : MonoBehaviour
         isPause = false;
         pauseSpeedBarJ1.SetActive(true);
         pauseSpeedBarJ2.SetActive(true);
+
+        tempori.SetActive(true);
 
     }
 
@@ -90,7 +92,7 @@ public class PauseMenuMulti : MonoBehaviour
         pauseUI.SetActive(true);
         pauseSpeedBarJ2.SetActive(false);
         pauseSpeedBarJ1.SetActive(false);
-
+        tempori.SetActive(false);
         try
         {
            // mover.vibrar = false;
@@ -102,6 +104,7 @@ public class PauseMenuMulti : MonoBehaviour
 
     public void DeactivateMenu()
     {
+        tempori.SetActive(true);
         Time.timeScale = 1;
         AudioListener.pause = false;
         pauseUI.SetActive(false);

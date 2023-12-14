@@ -16,6 +16,13 @@ public class CronometroMulti : MonoBehaviour
 
     private int minutosJ2, segundosJ2, decimasJ2;
 
+    private Temporizador temporizador;
+
+    private void Start()
+    {
+        temporizador = GetComponentInParent<Temporizador>();
+    }
+
     void Crono() {
         tiempoJ1 += Time.deltaTime;
 
@@ -41,6 +48,9 @@ public class CronometroMulti : MonoBehaviour
     // Update is called once per frame f
     void Update()
     {
-        Crono();
+        if (temporizador.tempo == true)
+        {
+            Crono();
+        }
     }
 }
