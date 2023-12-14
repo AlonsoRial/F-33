@@ -52,6 +52,8 @@ public class Mover : MonoBehaviour
 
     //public Animator animator;
 
+    private static Temporizador temporizador;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -59,12 +61,13 @@ public class Mover : MonoBehaviour
 
     }
 
+    public bool pasarTempo;
 
 
     private void Start()
     {
 
-        
+        temporizador = GetComponentInParent<Temporizador>();
         lanza.Stop();
         lanza2.Stop();
         lanza3.Stop();
@@ -154,101 +157,107 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-        
-        if (boolCamera)
+        pasarTempo = temporizador.tempo;
+        if (temporizador.tempo)
         {
-            camera2.enabled = true;
-            camera1.enabled = false;
-        }
-        else
-        {
-            camera2.enabled = false;
-            camera1.enabled = true;
-        }
 
-
-        if (chocar)
-        {
-            speed = speed / 2.7f;
-            chocar=false;
-        }
-
-
-        /*
-        float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
-        transform.Rotate(Vector3.up, rotationAmount);
-        */
-
-        if (speed != 0)
-        {
-            /*
-            if (inputVector.x>0f &&corriendo )
+            if (boolCamera)
             {
-                animator.SetBool("VuD", false);
-                animator.SetBool("GiD",true);
-            }
-            else if (inputVector.x <1f && corriendo) 
-            {
-                animator.SetBool("GiD", false);
-                animator.SetBool("VuD", true);
+                camera2.enabled = true;
+                camera1.enabled = false;
             }
             else
             {
-                animator.SetBool("GiD", false);
+                camera2.enabled = false;
+                camera1.enabled = true;
             }
+
+
+            if (chocar)
+            {
+                speed = speed / 2.7f;
+                chocar = false;
+            }
+
+
+            /*
+            float rotationAmount = inputVector.x * rotationSpeed * Time.deltaTime;
+            transform.Rotate(Vector3.up, rotationAmount);
             */
 
-            this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
-        }
-
-        if (corriendo == true  /*&& chocar==false|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
-        {
-
-            lanza.Play();
-            lanza2.Play();
-            lanza3.Play();
-
-            if (speed < maxMoveSpeed)
+            if (speed != 0)
             {
-                speed += acceleration * Time.deltaTime;
+                /*
+                if (inputVector.x>0f &&corriendo )
+                {
+                    animator.SetBool("VuD", false);
+                    animator.SetBool("GiD",true);
+                }
+                else if (inputVector.x <1f && corriendo) 
+                {
+                    animator.SetBool("GiD", false);
+                    animator.SetBool("VuD", true);
+                }
+                else
+                {
+                    animator.SetBool("GiD", false);
+                }
+                */
 
+                this.transform.Rotate(Vector3.up * speed * inputVector.x * Time.deltaTime * rotationSpeed);
             }
 
-            this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-            //transform.position.x = transform.position.x + speed * Time.deltaTime;
-
-            //this.transform.Translate(Vector3.forward * maxMoveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            lanza.Stop();
-            lanza2.Stop();
-            lanza3.Stop();
-            if (speed >= 0)
+            if (corriendo == true  /*&& chocar==false|| InputManager.instance.playerControls.PlayerMovement.RumbleAction.WasPressedThisFrame()*/)
             {
-                speed -= 3 * acceleration * Time.deltaTime;
+
+                lanza.Play();
+                lanza2.Play();
+                lanza3.Play();
+
+                if (speed < maxMoveSpeed)
+                {
+                    speed += acceleration * Time.deltaTime;
+
+                }
+
                 this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+                //transform.position.x = transform.position.x + speed * Time.deltaTime;
+
+                //this.transform.Translate(Vector3.forward * maxMoveSpeed * Time.deltaTime);
             }
-        }
+            else
+            {
+                lanza.Stop();
+                lanza2.Stop();
+                lanza3.Stop();
+                if (speed >= 0)
+                {
+                    speed -= 3 * acceleration * Time.deltaTime;
+                    this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                }
+            }
 
-        if (retroceder == true)
-        {
-            
-            this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
-            this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
-        }
+            if (retroceder == true)
+            {
 
-        try
-        {
-            speedBar.fillAmount = speed / maxMoveSpeed;
-        }
-        catch (NullReferenceException)
-        {
+                this.transform.Translate(-Vector3.forward * maxMoveSpeedBack * Time.deltaTime);
+                this.transform.Rotate(Vector3.up * maxMoveSpeedBack * inputVector.x * Time.deltaTime * rotationSpeed);
+            }
+
+            try
+            {
+                speedBar.fillAmount = speed / maxMoveSpeed;
+            }
+            catch (NullReferenceException)
+            {
+
+            }
 
         }
-
-        
+        else {
+            speedBar.fillAmount = 0;
+        }
 
 
     }

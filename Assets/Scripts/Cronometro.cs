@@ -10,7 +10,13 @@ public class Cronometro : MonoBehaviour
     [SerializeField] private float tiempo;
 
     private int minutos, segundos, decimas;
+  
+    private Temporizador temporizador;
 
+    private void Start()
+    {
+        temporizador = GetComponentInParent<Temporizador>();
+    }
     void Crono() {
         tiempo += Time.deltaTime;
 
@@ -25,6 +31,11 @@ public class Cronometro : MonoBehaviour
     // Update is called once per frame f
     void Update()
     {
-        Crono();
+
+        if (temporizador.tempo == true)
+        {
+            Crono();
+        }
+        
     }
 }

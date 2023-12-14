@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseSpeedBar;
     [SerializeField] private bool isPause;
 
-
+    [SerializeField] private GameObject tempori;
     
 
 
@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         pauseUI.SetActive(false);
         isPause = false;
         pauseSpeedBar.SetActive(true);
+        tempori.SetActive(true);
         
     }
 
@@ -87,7 +88,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = true;
         pauseUI.SetActive(true);
         pauseSpeedBar.SetActive(false);
-
+        tempori.SetActive(false);
         try
         {
             //mover.vibrar = false;
@@ -99,6 +100,8 @@ public class PauseMenu : MonoBehaviour
 
     public void DeactivateMenu()
     {
+        tempori.SetActive(true);
+
         Time.timeScale = 1;
         AudioListener.pause = false;
         pauseUI.SetActive(false);

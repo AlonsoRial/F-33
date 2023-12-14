@@ -87,7 +87,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (gamepad1.rightTrigger.isPressed)
         {
             
-            if (vibra ==true)
+            if (vibra ==true && mover.pasarTempo)
             {
                // Debug.Log("YES");
                 gamepad1.SetMotorSpeeds(lowA, highA);
