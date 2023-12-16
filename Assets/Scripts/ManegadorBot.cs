@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Splines;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
@@ -35,10 +36,10 @@ public class ManegadorBot : MonoBehaviour
         if (other.name == "Final" && meta)
         {
 
-          
+            SceneManager.LoadSceneAsync(4);
             Debug.Log(this.gameObject.name + " YYYYYYY");
             box.isTrigger = false;
-       
+            
 
 
 

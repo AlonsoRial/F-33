@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Mover : MonoBehaviour
@@ -92,9 +93,11 @@ public class Mover : MonoBehaviour
 
             if (this.gameObject.name == "Jugador 1") {
                 Debug.Log(this.gameObject.name + " MOLA MUCHO");
+                SceneManager.LoadSceneAsync(5);
             }
             else if (this.gameObject.name == "Jugador 2") {
                 Debug.Log(this.gameObject.name + " ERES GENIAL");
+                SceneManager.LoadSceneAsync(6);
             }
 
             
