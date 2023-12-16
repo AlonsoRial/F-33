@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class Mover : MonoBehaviour
 {
 
-
     public Camera camera1;
     public Camera camera2;
 
@@ -54,24 +53,54 @@ public class Mover : MonoBehaviour
 
     private static Temporizador temporizador;
 
+    public bool pasarTempo;
+
+    private bool meta=false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
       //  animator = GetComponent<Animator>();
-
+       
     }
 
-    public bool pasarTempo;
+
 
 
     private void Start()
     {
-
+      
         temporizador = GetComponentInParent<Temporizador>();
         lanza.Stop();
         lanza2.Stop();
         lanza3.Stop();
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "CheckPoint")
+        {
+            Debug.Log(this.gameObject.name + " PASO");
+            meta = true;
+            
+           
+        }
+
+
+        if (other.name == "Final" && meta) {
+
+            if (this.gameObject.name == "Jugador 1") {
+                Debug.Log(this.gameObject.name + " MOLA MUCHO");
+            }
+            else if (this.gameObject.name == "Jugador 2") {
+                Debug.Log(this.gameObject.name + " ERES GENIAL");
+            }
+
+            
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
