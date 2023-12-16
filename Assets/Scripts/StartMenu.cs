@@ -28,6 +28,11 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(3);
     }
 
+    public void Controles()
+    {
+        SceneManager.LoadSceneAsync(7);
+    }
+
     public void CerrarCreditos()
     {
         SceneManager.LoadSceneAsync(0);
