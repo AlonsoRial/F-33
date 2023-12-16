@@ -13,6 +13,10 @@ public class ManegadorBot : MonoBehaviour
 
     private BoxCollider box;
 
+    public ParticleSystem lanza;
+    public ParticleSystem lanza2;
+    public ParticleSystem lanza3;
+
     public bool meta=false;
     // Start is called before the first frame update
     void Start()
@@ -51,7 +55,14 @@ public class ManegadorBot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        lanza.Stop();
+        lanza2.Stop();
+        lanza3.Stop();
+
         if (temporizador.tempo) {
+            lanza.Play();
+            lanza2.Play();
+            lanza3.Play();
             splineAnimate.Play();
             box.isTrigger = true;
         }
