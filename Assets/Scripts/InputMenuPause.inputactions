@@ -26,61 +26,6 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "962af0a7-bd2c-4013-ac48-e1f83c2451a7",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "right",
-                    "id": "4f59c1fb-f8fe-4826-a2e8-502f27a60cee",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "9c9eb294-a9c4-46e1-9821-f65ae2402756",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "a2e24518-8a00-46c6-a50a-8c8ef3757d61",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "ff0368ce-3cfc-49fd-8406-684b9db97731",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "83456381-ba7f-4e93-8a2c-3554ee11627c",
                     "path": "<HID::Nintendo Wireless Gamepad>/hat",
