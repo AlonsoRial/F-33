@@ -70,7 +70,7 @@ public class Mover : MonoBehaviour
 
     private void Start()
     {
-      
+        Cursor.visible = false;
         temporizador = GetComponentInParent<Temporizador>();
         lanza.Stop();
         lanza2.Stop();

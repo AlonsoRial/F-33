@@ -17,7 +17,7 @@ public class Temporizador : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.visible = false;
         gameObjectTempo.SetActive(true);
     }
 

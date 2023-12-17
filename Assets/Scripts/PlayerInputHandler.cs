@@ -18,6 +18,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
         playerInput = GetComponent<PlayerInput>();
         var movers = FindObjectsOfType<Mover>();
         var index = playerInput.playerIndex;

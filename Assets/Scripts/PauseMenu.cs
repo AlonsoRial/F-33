@@ -26,8 +26,8 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-      
-       
+
+        Cursor.visible = false;
         playerControls = new PlayerControls();
 
         Time.timeScale = 1;
